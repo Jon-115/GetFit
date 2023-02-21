@@ -1,0 +1,33 @@
+#Mid{
+    display: flex;
+    justify-content: space-between;
+}
+
+#MidBox{
+    width: 48%;
+}
+
+#Bot{
+    padding: 5%;
+}
+
+#BotSub1{
+    display: flex;
+    justify-content: space-around;
+}
+
+.box{
+    background-color:white;
+    margin-bottom: 2%;
+    border-radius: 2%;
+    
+}
+
+h1{
+    text-align: center;
+}
+
+p{
+    text-align: center;
+    margin-bottom: 0%;
+}
