@@ -32,6 +32,7 @@ function FormPage() {
     
     let bmr = 0
     let gen = ''
+    let gneed = 0
 
 
     //BMI Calc
@@ -61,10 +62,15 @@ function FormPage() {
     else{
       gen = 'Female'
     }
-    console.log(age, feet, inch, weight, gen, mode)
-    console.log(bmi, bmr, calUsed)
+
+    console.log(calUsed)
+
+    mode === 'Gain' ? gneed = calUsed + 450 : gneed = calUsed - 300
+    
+    console.log(gneed)
+
     dispatch(gotInfo())
-    dispatch(getCalcStats({'bmi': bmi, 'bmr': bmr, 'mcalc': calUsed}))
+    dispatch(getCalcStats({'bmi': bmi, 'bmr': bmr, 'mcalc': calUsed, 'gcalc' : gneed}))
     dispatch(getDefStats({'age': age, 'feet': feet, 'inch': inch, 'weight': weight, 'isMale': gen}))
     dispatch(set_Mode(mode))
   }
