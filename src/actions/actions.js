@@ -20,3 +20,11 @@ export const getDefStats = (stats) => {
         stats
     }
 }
+
+export const set_Mode = (mode) => {
+
+    return{
+        type: 'SET_MODE',
+        mode
+    }
+}

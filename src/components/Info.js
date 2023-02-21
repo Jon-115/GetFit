@@ -7,13 +7,13 @@ import '../css/Info.css'
 function Info() {
   return (
     <div id='InfoMain'>
-        <div id='FoodBox'>
+        <div id='FoodBox' className='InfoBox'>
             <Food/>
         </div>
-        <div id='StatsBox'>
+        <div id='StatsBox' className='InfoBox'>
             <Stats/> 
         </div>
-        <div id='WorkBox'>
+        <div id='WorkBox' className='InfoBox'>
             <Work/> 
         </div>
     </div>

@@ -6,13 +6,14 @@ function Stats() {
 
   const calcStats = useSelector(state => state.calcStats)
   const defStats = useSelector(state => state.defStats)
+  const mode = useSelector(state => state.mode)
 
   return (
     <div>
 
       <div id='Top' className='box'>
         <p>Maintenince Calories</p>
-        <h1>{calcStats['mcalc']}</h1>
+        <h1>{calcStats['mcalc']}</h1> 
       </div>
 
       <div id='Mid'>
@@ -27,6 +28,9 @@ function Stats() {
       </div>
 
       <div id='Bot' className='box'>
+        <div>
+          <h3>{defStats['isMale']}</h3>
+        </div>
         <div id='BotSub1'>
 
           <div>
@@ -41,11 +45,14 @@ function Stats() {
         </div>
         <div>
           <p>Height</p>
-          <h1>Feet: {defStats['feet']} inch: {defStats['inch']}</h1>
+          <h1>{defStats['feet']}'{defStats['inch']}</h1>
         </div>
+
         <div>
-          <h1>{defStats['isMale']}</h1>
+          <p>Goal</p>
+          <h1>{mode}</h1>
         </div>
+        
       </div>
 
      

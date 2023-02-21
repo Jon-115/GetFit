@@ -9,6 +9,7 @@ import { useDispatch } from 'react-redux';
 import {gotInfo} from '../actions/actions'
 import {getCalcStats} from '../actions/actions'
 import {getDefStats} from '../actions/actions'
+import {set_Mode} from '../actions/actions'
 
 
 
@@ -22,6 +23,7 @@ function FormPage() {
   const [weight, setWeight] = useState(160)
   const [male, setMale] = useState(true)
   const [activity, setActivy] = useState('None')
+  const [mode, setMode] = useState('Loose')
 
   let actcheck = {'None': 1.3, 'Light': 1.55, 'Moderate': 1.65, 'Heavy': 1.8}
 
@@ -59,11 +61,12 @@ function FormPage() {
     else{
       gen = 'Female'
     }
-    console.log(age, feet, inch, weight, gen)
+    console.log(age, feet, inch, weight, gen, mode)
     console.log(bmi, bmr, calUsed)
     dispatch(gotInfo())
     dispatch(getCalcStats({'bmi': bmi, 'bmr': bmr, 'mcalc': calUsed}))
     dispatch(getDefStats({'age': age, 'feet': feet, 'inch': inch, 'weight': weight, 'isMale': gen}))
+    dispatch(set_Mode(mode))
   }
   
   
@@ -72,14 +75,27 @@ function FormPage() {
       <div id='Form'>
         <Form onSubmit={e => handlesubmit(e)}>
 
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Age</Form.Label>
-            <InputGroup className="mb-3">
-                <Form.Control type="number" placeholder="Enter Age" value={age} onChange={e => setAge(e.target.value)} required/>
-                <InputGroup.Text id="basic-addon1">yrs</InputGroup.Text>
-              </InputGroup>
-          </Form.Group>
-
+          <Row>
+            <Col>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Age</Form.Label>
+                <InputGroup className="mb-3">
+                    <Form.Control type="number" placeholder="Enter Age" value={age} onChange={e => setAge(e.target.value)} required/>
+                    <InputGroup.Text id="basic-addon1">yrs</InputGroup.Text>
+                  </InputGroup>
+              </Form.Group>
+            </Col>
+            <Col>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Weight</Form.Label>
+                <InputGroup className="mb-3">
+                    <Form.Control type="number" placeholder="Enter Weight" value={weight} onChange={e => setWeight(e.target.value)} required/>
+                    <InputGroup.Text id="basic-addon1">Ibs</InputGroup.Text>
+                  </InputGroup>
+              </Form.Group>
+            </Col>
+          </Row>
+          
           <Form.Label>Height</Form.Label>
           <Row>
             <Col>
@@ -103,15 +119,7 @@ function FormPage() {
           </Row>
           
 
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Weight</Form.Label>
-            <InputGroup className="mb-3">
-                <Form.Control type="number" placeholder="Enter Weight" value={weight} onChange={e => setWeight(e.target.value)} required/>
-                <InputGroup.Text id="basic-addon1">Ibs</InputGroup.Text>
-              </InputGroup>
-            
-        
-          </Form.Group>
+          
 
           <Form.Label>Daily Activity</Form.Label>
           <Form.Select aria-label="Default select example" onChange={e => setActivy(e.target.value)} required>
@@ -143,6 +151,15 @@ function FormPage() {
               onClick={e => setMale(e.target.value)}
             />
           </div>
+
+          <Form.Label>Goal</Form.Label>
+          <Form.Select aria-label="Default select example" onChange={e => setMode(e.target.value)} required>
+            <option>Loose</option>
+            <option>Gain</option>
+          </Form.Select>
+          <br />
+          
+           
 
           <Button variant="primary" type="submit">
             Submit

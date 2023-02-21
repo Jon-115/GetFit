@@ -5,7 +5,8 @@ const reducer = (state, action) => {
         state = {
             gotInfo: false,
             calcStats: {},
-            defStats: {}
+            defStats: {},
+            mode: 'Loose'
         }
     }
 
@@ -28,6 +29,12 @@ const reducer = (state, action) => {
             return{
                 ...state,
                 defStats: action.stats
+            }
+        case 'SET_MODE':
+
+            return {
+                ...state,
+                mode: action.mode
             }
         default:
             return state

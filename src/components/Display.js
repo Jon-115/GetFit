@@ -15,7 +15,6 @@ function Display() {
         <div id='TopBar'>
           <h1>GetFit</h1> 
         </div>
-        
         <div id='Main'>
             {showInfo ? <Info/> : <FormPage/>} 
         </div>

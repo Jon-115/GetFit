@@ -1,0 +1,8 @@
+#TopFood{
+    display: flex;
+    justify-content: space-between;
+}
+
+#FoodBoxInfo{
+    width: 48%;
+}
