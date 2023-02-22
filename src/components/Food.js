@@ -17,7 +17,7 @@ function Food() {
       <div  id='TopFood'>
 
         <div className='box' id='FoodBoxInfo'>
-          <p>Calories</p>
+          <p>Daily Calorie Goal</p>
           <p>{calcStats.gcalc}</p>
         </div>
 
