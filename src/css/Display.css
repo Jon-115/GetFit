@@ -9,7 +9,17 @@
     background-color:  #1F2421;
     display: flex;
     justify-content: center;
+    
+    opacity: .95;
+    
+}
+
+#navbar{
+    width: 50%;
     color: white;
+    border-bottom: 1px;
+    border-bottom-style: solid;
+
 }
 
 /* #DCE1DE */
@@ -19,4 +29,5 @@
     width: 100%;
     background-color:#1F2421;
     padding-top: 3%;
+    opacity: .95;
 }

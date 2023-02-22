@@ -3,13 +3,16 @@
     height: 100%;
     display: flex;
     justify-content: space-around;
+    
 }
 
 .InfoBox{
     width: 30%;
     height: 95%;
-    background-color: rgb(207, 200, 200);
+    background-color: rgba(255, 255, 255, 0.769);
     padding: 2%;
+    box-shadow: 5px 5px white;
+    
 }
 
 @media screen and (min-width: 200px) and (max-width: 700px) {
@@ -20,7 +23,6 @@
     }
     
     #InfoMain{
-        background-color: red;
         flex-direction: column;
         width: 100vw;
     }

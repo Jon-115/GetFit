@@ -13,7 +13,10 @@ function Display() {
     <div id='Screen'>
 
         <div id='TopBar'>
-          <h1>GetFit</h1> 
+          <div id='navbar'>
+            <h1>GetFit</h1> 
+          </div>
+          
         </div>
         <div id='Main'>
             {showInfo ? <Info/> : <FormPage/>} 

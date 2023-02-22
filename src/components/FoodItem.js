@@ -3,7 +3,8 @@ import React from 'react'
 function FoodItem({meal}) {
   return (
     <div id='FoodItem' className='box'>
-        {meal.title}
+        <a href={meal.sourceUrl}>{meal.title}</a> <br />
+        Ready in {meal.readyInMinutes} minutes
     </div>
   )
 }
